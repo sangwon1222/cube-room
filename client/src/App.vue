@@ -1,15 +1,16 @@
-<script setup lang="ts">
-import PIXIApp from "./PIXIApp.vue"
-import ThreeApp from "./ThreeApp.vue"
-
-</script>
-
 <template>
-  <div>
-    <component :is="PIXIApp" />
-    <component :is="ThreeApp" />
+  <div id="app">
+    <canvas ref="canvas" />
   </div>
 </template>
 
-<style scoped>
-</style>
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+import { Application } from "@three/app/Application";
+
+const canvas = ref<HTMLCanvasElement>();
+
+onMounted(() => {
+  const app = new Application({ view: canvas.value! });
+});
+</script>

@@ -11,8 +11,25 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@three/*": ["three/*"],
+      "@data/*": ["three/data/*"],
+      "@component/*": ["three/component/*"],
+      "@quark/*": ["three/component/quark/*"],
+      "@atom/*": ["three/component/atom/*"],
+      "@molecule/*": ["three/component/molecule/*"],
+      "@template/*": ["three/component/template/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
