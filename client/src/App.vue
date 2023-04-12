@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="wrap">
     <canvas ref="canvas" />
   </div>
 </template>
